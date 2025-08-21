@@ -1,3 +1,6 @@
+#ifndef STD_LOL_H
+#define STD_LOL_H
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -11,3 +14,5 @@ int judge();
 
 #define printf(...) AI_printf(__VA_ARGS__)
 int AI_printf(const char *format, ...);
+
+#endif // STD_LOL_H

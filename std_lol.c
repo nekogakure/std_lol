@@ -40,9 +40,6 @@ int judge() {
     }
 }
 
-#define printf(...) AI_printf(__VA_ARGS__)
-#define fprintf(stream, ...) AI_fprintf(stream, __VA_ARGS__)
-
 int AI_printf(const char *format, ...) {
     ai_printf_intro();
     if (!judge()) return 0;
@@ -65,18 +62,5 @@ int AI_fprintf(FILE *stream, const char *format, ...) {
     return r;
 }
 
-int main() {
-    srand(time(NULL));
-    printf("Hello, world!\n");
-
-    fprintf(stdout, "output for fprintf stdout\n");
-    fprintf(stderr, "output for fprintf stderr\n");
-
-    FILE *f = fopen("test.txt", "w");
-    if (f) {
-        fprintf(f, "write the text file for fprintf\n");
-        fclose(f);
-    }
-
-    return 0;
-}
+#define printf(...) AI_printf(__VA_ARGS__)
+#define fprintf(stream, ...) AI_fprintf(stream, __VA_ARGS__)
